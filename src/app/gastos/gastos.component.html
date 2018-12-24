@@ -4,11 +4,10 @@
 <div class="input-group">
   <input type="text" placeholder="Produto" class="form-control" #item>
   <input type="text" placeholder="Valor R$: 0.00" class="form-control" #valor>
-  <div class="input-group-addon hover-cursor" (click)="onAdd(item, valor)">
-    <i class="fa fa-plus-circle fa-2x"></i>
-  </div>
+  <button class="btn btn-group" (click)="onAdd(item, valor)">
+      <i class="fa fa-plus-circle fa-2x"></i>
+    </button>
 </div>
-
 <div style="margin:5px 0px">
   <ul class="list-group" *ngFor="let item of gastosListArray">
     <li class="list-group-item">

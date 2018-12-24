@@ -18,10 +18,6 @@ export class GastosService {
     });
   }
 
-  checkOrUnCheckGasto($key: string, flag: boolean) {
-    this.gastosList.update($key, { isChecked: flag });
-  }
-
   removeGasto($key: string) {
     this.gastosList.remove($key);
   }
