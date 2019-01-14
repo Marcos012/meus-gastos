@@ -4,10 +4,16 @@
 <div class="input-group">
   <input type="text" placeholder="Produto" class="form-control" #item>
   <input type="text" placeholder="Valor R$: 0.00" class="form-control" #valor>
-  <button class="btn btn-group" (click)="onAdd(item, valor)">
-      <i class="fa fa-plus-circle fa-2x"></i>
-    </button>
 </div>
+<div class="input-group">
+  <input type="text" placeholder="data" class="form-control" #data>
+  <button class="btn btn-group" (click)="onAdd(item, valor, data)">
+    <i class="fa fa-plus-circle fa-2x"></i>
+  </button>
+</div>
+
+<button (click)="onClear(item.$key)">clear</button>
+
 <div style="margin:5px 0px">
   <ul class="list-group" *ngFor="let item of gastosListArray">
     <li class="list-group-item">
@@ -15,10 +21,12 @@
         {{item.item}}
       </div>
       <hr>
-      {{item.valor | currency:'R$ '}}
+      {{item.valor | currency:'BRL':true}}
       <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
         <i class="fa fa-trash-o fa-lg"></i>
       </span>
+      <hr>
+      {{item.data}}
     </li>
   </ul>
 </div>

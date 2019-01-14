@@ -22,14 +22,19 @@ export class GastosComponent implements OnInit {
       });
   }
 
-  onAdd(item, valor) {
-    this.gastosService.addGasto(item.value, valor.value);
+  onAdd(item, valor, data) {
+    this.gastosService.addGasto(item.value, valor.value, data.value);
     item.value = null;
     valor.value = null;
+    data.value = null;
   }
 
   onDelete($key: string) {
     this.gastosService.removeGasto($key);
+  }
+
+  onClear($key: string) {
+    this.gastosService.clearList($key);
   }
 
 }
